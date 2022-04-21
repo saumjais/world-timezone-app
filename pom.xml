@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.4.0-20220321</app.runtime>
+		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 	</properties>
 
@@ -31,24 +31,22 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0</muleVersion>
-						<username>golu3001</username>
-						<password>Vprayagraj3001</password>
-						<applicationName>worldtimezone-service</applicationName>
-						<environment>Sandbox</environment>
-						<workers>1</workers>
-						<workerType>Micro</workerType>
-						<objectStoreV2>true</objectStoreV2>
-						<properties>
-							<key>value</key>
-						</properties>
-					</cloudHubDeployment>
-				</configuration>
-			
-			
-			</plugin>
+    <cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com</uri>;
+      <muleVersion>${app.runtime}</muleVersion>
+      <username>${username}</username>
+      <password>${password}</password>
+      <applicationName>${cloudhub.application.name}</applicationName>
+      <environment>${environment}</environment>
+      <region>${region}</region>
+      <workers>${workers}</workers>
+      <workerType>${workerType}</workerType>
+      <properties>
+        <key>value</key>
+      </properties>
+    </cloudHubDeployment>
+  </configuration>
+				</plugin>
 		</plugins>
 	</build>
 
